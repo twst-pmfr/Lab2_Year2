@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Список пользователей</h1>
+    <a href="{{ url_for('add_user') }}" class="btn btn-success">Добавить пользователя</a>
+</div>
+
+<table class="users-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Имя</th>
+            <th>Email</th>
+            <th>Дата регистрации</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <td>{{ user[0] }}</td>
+            <td>{{ user[1] }}</td>
+            <td>{{ user[2] }}</td>
+            <td>{{ user[3] }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="4" class="no-data">Пользователи не найдены</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- 🔍 API ссылка -->
+<div class="api-section">
+    <p>Данные также доступны через API: 
+        <a href="{{ url_for('api_users') }}">{{ url_for('api_users', _external=True) }}</a>
+    </p>
+</div>
+{% endblock %}
