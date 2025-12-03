@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}О приложении{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>О нашем проекте</h1>
+    <p>Это веб-приложение создано с использованием фреймворка Flask.</p>
+    <ul>
+        <li><strong>Цель:</strong> демонстрация возможностей Flask и базы данных SQLite.</li>
+        <li><strong>Функциональность:</strong> просмотр пользователей, добавление новых записей, навигация по страницам.</li>
+        <li><strong>Структура:</strong></li>
+            <ul>
+                <li><code>/app.py</code>: основной скрипт Flask-приложения.</li>
+                <li><code>/database.db</code>: база данных SQLite для хранения пользователей.</li>
+                <li><code>/static/css/style.css</code>, <code>/static/js/script.js</code>: стили и скрипты JavaScript.</li>
+                <li><code>/templates/*</code>: HTML-шаблоны.</li>
+            </ul>
+    </ul>
+    <a href="/">Вернуться на главную страницу</a>
+</div>
+{% endblock %}

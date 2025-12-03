@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ошибка 404 — страница не найдена</title>
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+    <h1>Ошибка 404</h1>
+    <p>Запрошенная вами страница не существует.</p>
+    <a href="/">Вернуться на главную страницу</a>
+</div>
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}
+</body>
+</html>
